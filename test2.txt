@@ -1,0 +1,36 @@
+beq zero, zero, jump1
+addi s0 ,zero, 100
+
+jump1:
+addi t0, zero, 1
+bne t0, zero, jump2
+
+jump2:
+blt zero, t0, jump3
+addi s0, zero, 100
+
+jump3:
+bge t0, zero, jump4
+addi s0, zero, 100
+
+jump4:
+bltu zero, t0, jump5
+addi t0, zero 100
+
+jump5:
+bgeu t0, zero, jump6
+addi t0, zero, 100
+
+jump6:
+lui t1, 100000
+auipc t1, 100000
+
+jal ra, jump7
+addi t0, zero, -100
+beq zero, zero, exit
+
+jump7:
+jalr zero, 0(ra)
+
+exit:
+ebreak

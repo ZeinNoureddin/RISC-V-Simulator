@@ -1,0 +1,11 @@
+addi a0, zero, 1000
+lw t0, 0(a0)
+
+addi s0, zero, 0
+addi s1, zero, 10
+
+loop:
+add t0, t0, t0
+addi s0, s0, 1
+bne s0, s1, loop
+ecall
